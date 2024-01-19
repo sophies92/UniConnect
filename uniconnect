@@ -1,0 +1,22 @@
+#!/bin/bash
+
+#------------------------------------------------------------------------------------------------------------
+# Mount Aber Uni Storage Drives using sshfs
+# Author: Sophie Short
+# 2024.01.19
+# v0.1.0
+#------------------------------------------------------------------------------------------------------------
+# MUST have directories ~/IMPACS & ~/ABER to mount to - will update to check for and create folder if needed.
+
+
+echo "Enter drive to connect to:"
+echo "Available drives:"
+echo "- impacs : P-drive"
+echo "- aber   : M-drive"
+
+read istr
+istrcaps=${istr^^}
+
+echo "Enter user:"
+read userstr
+sshfs $userstr@shellsrv.dcs.aber.ac.uk:/$istr/$userstr/ ~/$istrcaps
