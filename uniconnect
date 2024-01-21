@@ -23,4 +23,4 @@ fi
 
 echo "Enter user:"
 read userstr
-sshfs $userstr@shellsrv.dcs.aber.ac.uk:/$istr/$userstr/ &HOME/$istrcaps
+sshfs $userstr@shellsrv.dcs.aber.ac.uk:/$istr/$userstr/ $HOME/$istrcaps
