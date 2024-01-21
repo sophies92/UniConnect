@@ -16,11 +16,11 @@ echo "- aber   : M-drive"
 read istr
 istrcaps=${istr^^}
 
-if [ ! -d $HOME"/"$istrcaps ]; 
+if [ ! -d $HOME/$istrcaps ]; 
 then
-    mkdir $HOME"/"$istrcaps
+    mkdir $HOME/$istrcaps
 fi
 
 echo "Enter user:"
 read userstr
-sshfs $userstr@shellsrv.dcs.aber.ac.uk:/$istr/$userstr/ ~/$istrcaps
+sshfs $userstr@shellsrv.dcs.aber.ac.uk:/$istr/$userstr/ &HOME/$istrcaps
