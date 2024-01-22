@@ -13,15 +13,29 @@ istr=$1
 istrcaps=${istr^^}
 userstr=$2
 
+dirstring=""
+
 
 Help()
 {
-    echo "Add description of the script functions here."
+    echo "=================================================="
+    echo "                       HELP                       "
+    echo "=================================================="
     echo
-    echo "Syntax: scriptTemplate [-c|h|V]"
+    echo "Syntax: uniconnect [targetDrive] [username]"
+    echo "        uniconnect [-c|h|V] [optArgs]"
+    echo
+    echo "Suggested [targetDrive] options:"
+    echo "      \"impacs\"  : 'P'drive"
+    echo "      \"aber\"    : 'M'drive"
+    echo
     echo "options:"
+    echo
     echo "c     Cleanup Directories."
-    echo "h     Print this Help and exit."
+    echo "      [optArgs] mount directory"
+    echo
+    echo "h     Print this Help text and exit."
+    echo
     echo "V     Print software version and exit."
     echo
 }
@@ -38,9 +52,12 @@ Version()
 
 Cleanup()
 {
-    if [ -d $HOME/$istrcaps ];
+    if [ ! $dirstring = "" ]
     then
-        rm -r $HOME/$istrcaps
+        if [ -d $HOME/${dirstring^^} ];
+        then
+            rm -r $HOME/${dirstring^^}
+        fi
     fi
 }
 
@@ -57,10 +74,11 @@ Connect()
     sshfs $userstr@shellsrv.dcs.aber.ac.uk:/$istr/$userstr/ $HOME/$istrcaps
 }
 
-while getopts ":c:h:V" option; do
+while getopts "c:hV" option; do
    case $option in
     c)  #clean directories
-        echo "not implemented"
+        dirstring=${OPTARG}
+        Cleanup
         exit;;
     h)  # display Help
         Help
@@ -78,4 +96,6 @@ if [ ! $istr = "" ] && [ ! $userstr = "" ];
 then
     CheckMakeDir
     Connect
+else
+    echo "[targetDrive] and [username] are required."
 fi
