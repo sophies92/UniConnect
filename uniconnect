@@ -98,4 +98,5 @@ then
     Connect
 else
     echo "[targetDrive] and [username] are required."
+    echo "Check HELP "-h" for usage."
 fi
