@@ -1,3 +1,5 @@
 v0.1.1
-
     - Added check if mount directory exists; if not directory is created.
+
+v0.1.2
+    - changed structure
