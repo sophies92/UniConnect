@@ -20,7 +20,6 @@ Help()
     echo
     echo "Syntax: scriptTemplate [-g|h|V]"
     echo "options:"
-    echo "g     Print the GPL license notification."
     echo "h     Print this Help and exit."
     echo "V     Print software version and exit."
     echo
