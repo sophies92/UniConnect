@@ -1,8 +1,0 @@
-v0.1.2
-    - changed structure
-    - added help page (-h)
-    - added version info page (-v)
-
-    
-v0.1.1
-    - Added check if mount directory exists; if not directory is created.
