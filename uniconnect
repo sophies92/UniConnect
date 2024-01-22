@@ -3,24 +3,53 @@
 #------------------------------------------------------------------------------------------------------------
 # Mount Aber Uni Storage Drives using sshfs
 # Author: Sophie Short
-# Date last modified: 2024.01.21
-# Version: 0.1.1
+# Date last modified: 2024.01.22
+# Version: 0.1.2
 #------------------------------------------------------------------------------------------------------------
 
-
-echo "Enter drive to connect to:"
-echo "Available drives:"
-echo "- impacs : P-drive"
-echo "- aber   : M-drive"
-
-read istr
+istr=$1
 istrcaps=${istr^^}
+userstr=$2
 
-if [ ! -d $HOME/$istrcaps ]; 
+
+Help()
+{
+    echo "Add description of the script functions here."
+    echo
+    echo "Syntax: scriptTemplate [-g|h|V]"
+    echo "options:"
+    echo "g     Print the GPL license notification."
+    echo "h     Print this Help."
+    echo "V     Print software version and exit."
+    echo
+}
+
+CheckMakeDir()
+{
+    if [ ! -d $HOME/$istrcaps ]; 
+    then
+        mkdir $HOME/$istrcaps
+    fi
+}
+
+Connect()
+{
+    sshfs $userstr@shellsrv.dcs.aber.ac.uk:/$istr/$userstr/ $HOME/$istrcaps
+}
+
+while getopts ":h:" option; do
+   case $option in
+      h) # display Help
+         Help
+         exit;;
+     \?) # Invalid option
+         echo "Error: Invalid option"
+         exit;;
+   esac
+done
+
+if [ ! $istr = "" ] && [ ! $userstr = "" ]
 then
-    mkdir $HOME/$istrcaps
+    CheckMakeDir
+    Connect
 fi
-
-echo "Enter user:"
-read userstr
-sshfs $userstr@shellsrv.dcs.aber.ac.uk:/$istr/$userstr/ $HOME/$istrcaps
