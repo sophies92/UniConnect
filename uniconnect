@@ -54,9 +54,9 @@ Cleanup()
 {
     if [ ! $dirstring = "" ]
     then
-        if [ -d $HOME/${dirstring^^} ];
+        if [ -d $HOME/$dirstring ];
         then
-            rm -r $HOME/${dirstring^^}
+            rm -r $HOME/$dirstring
         fi
     fi
 }
@@ -77,7 +77,7 @@ Connect()
 while getopts "c:hV" option; do
    case $option in
     c)  #clean directories
-        dirstring=${OPTARG}
+        dirstring=${OPTARG^^}
         Cleanup
         exit;;
     h)  # display Help
