@@ -18,7 +18,7 @@ Help()
 {
     echo "Add description of the script functions here."
     echo
-    echo "Syntax: scriptTemplate [-g|h|V]"
+    echo "Syntax: scriptTemplate [-h|V]"
     echo "options:"
     echo "h     Print this Help and exit."
     echo "V     Print software version and exit."
