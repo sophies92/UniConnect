@@ -6,6 +6,8 @@
 # Date last modified: 2024.01.22
 # Version: 0.1.2
 #------------------------------------------------------------------------------------------------------------
+version="0.1.2"
+dateModified="2024.01.22"
 
 istr=$1
 istrcaps=${istr^^}
@@ -19,8 +21,18 @@ Help()
     echo "Syntax: scriptTemplate [-g|h|V]"
     echo "options:"
     echo "g     Print the GPL license notification."
-    echo "h     Print this Help."
+    echo "h     Print this Help and exit."
     echo "V     Print software version and exit."
+    echo
+}
+
+Version()
+{
+    echo "uniconnect"
+    echo
+    echo "Version: " $version
+    echo "Author: Sophie Short"
+    echo "Last Modified: " $dateModified
     echo
 }
 
@@ -37,14 +49,17 @@ Connect()
     sshfs $userstr@shellsrv.dcs.aber.ac.uk:/$istr/$userstr/ $HOME/$istrcaps
 }
 
-while getopts ":h:" option; do
+while getopts ":h:V" option; do
    case $option in
-      h) # display Help
-         Help
-         exit;;
-     \?) # Invalid option
-         echo "Error: Invalid option"
-         exit;;
+    h)  # display Help
+        Help
+        exit;;
+    V)  # Version info
+        Version
+        exit;;
+    \?) # Invalid option
+        echo "Error: Invalid option"
+        exit;;
    esac
 done
 
