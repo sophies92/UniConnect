@@ -1,0 +1,11 @@
+uniconnect - readme
+
+Usage:
+    - Place "uniconnect" in $HOME/./local/bin
+    - $HOME/.local/bin may need to be added to $HOME/.bashrc as a location to search for scripts
+        - you may need to log out and log in again or restart your computer for the folder to be scanned.
+    - Start the program by typing "uniconnect" int a terminal window
+    - You will be prompted for which drive to connect to, your Aber Uni Username ("abc12" etc) and Password
+        - you may need to set up ssh keys to successfully connect
+        - you must be connected to an Aber Uni network or connected to the Aber Uni VPN to remotely mount 
+        network drives
