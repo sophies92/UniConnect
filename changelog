@@ -3,3 +3,5 @@ v0.1.1
 
 v0.1.2
     - changed structure
+    - added help page (-h)
+    - added version info page (-v)
