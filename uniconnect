@@ -18,8 +18,9 @@ Help()
 {
     echo "Add description of the script functions here."
     echo
-    echo "Syntax: scriptTemplate [-h|V]"
+    echo "Syntax: scriptTemplate [-c|h|V]"
     echo "options:"
+    echo "c     Cleanup Directories."
     echo "h     Print this Help and exit."
     echo "V     Print software version and exit."
     echo
@@ -35,6 +36,14 @@ Version()
     echo
 }
 
+Cleanup()
+{
+    if [ -d $HOME/$istrcaps ];
+    then
+        rm -r $HOME/$istrcaps
+    fi
+}
+
 CheckMakeDir()
 {
     if [ ! -d $HOME/$istrcaps ]; 
@@ -48,8 +57,11 @@ Connect()
     sshfs $userstr@shellsrv.dcs.aber.ac.uk:/$istr/$userstr/ $HOME/$istrcaps
 }
 
-while getopts ":h:V" option; do
+while getopts ":c:h:V" option; do
    case $option in
+    c)  #clean directories
+        echo "not implemented"
+        exit;;
     h)  # display Help
         Help
         exit;;
@@ -62,7 +74,7 @@ while getopts ":h:V" option; do
    esac
 done
 
-if [ ! $istr = "" ] && [ ! $userstr = "" ]
+if [ ! $istr = "" ] && [ ! $userstr = "" ];
 then
     CheckMakeDir
     Connect
