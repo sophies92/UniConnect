@@ -74,6 +74,11 @@ Connect()
     sshfs $userstr@shellsrv.dcs.aber.ac.uk:/$istr/$userstr/ $HOME/$istrcaps
 }
 
+Unmount()
+{
+    # fill this and add option
+}
+
 while getopts "c:hV" option; do
    case $option in
     c)  #clean directories
