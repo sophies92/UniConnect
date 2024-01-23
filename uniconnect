@@ -38,6 +38,9 @@ Help()
     echo "      directories."
     echo "      [optArgs] targetDrive"
     echo
+    echo "v     Unmount targetDrive. Does NOT remove directories"
+    echo "      [optArgs] targetDrive"
+    echo
     echo "h     Print this Help text and exit."
     echo
     echo "V     Print software version and exit."
@@ -83,7 +86,7 @@ Unmount()
     umount $HOME/$dirstring
 }
 
-while getopts "c:u:hV" option; do
+while getopts "c:hu:v:V" option; do
    case $option in
     c)  #clean directories
         dirstring=${OPTARG^^}
@@ -96,6 +99,10 @@ while getopts "c:u:hV" option; do
         dirstring=${OPTARG^^}
         Unmount
         Cleanup
+        exit;;
+    v)  # unmount, dont clean
+    dirstring=${OPTARG^^}
+        Unmount
         exit;;
     V)  # Version info
         Version
