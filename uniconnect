@@ -34,7 +34,8 @@ Help()
     echo "c     Cleanup mount directories."
     echo "      [optArgs] mount directory"
     echo
-    echo "u     Unmount targetDrive."
+    echo "u     Unmount targetDrive. Also removes empty"
+    echo "      directories."
     echo "      [optArgs] targetDrive"
     echo
     echo "h     Print this Help text and exit."
