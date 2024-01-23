@@ -94,6 +94,7 @@ while getopts "c:u:hV" option; do
     u)  #unmount
         dirstring=${OPTARG^^}
         Unmount
+        Cleanup
         exit;;
     V)  # Version info
         Version
