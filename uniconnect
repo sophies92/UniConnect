@@ -79,7 +79,7 @@ Connect()
 
 Unmount()
 {
-    # fill this and add option
+    umount $HOME/$dirstring
 }
 
 while getopts "c:u:hV" option; do
@@ -89,6 +89,7 @@ while getopts "c:u:hV" option; do
         Cleanup
         exit;;
     u)  #unmount
+        dirstring=${OPTARG^^}
         Unmount
         exit;;
     h)  # display Help
