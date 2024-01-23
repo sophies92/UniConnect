@@ -34,6 +34,9 @@ Help()
     echo "c     Cleanup Directories."
     echo "      [optArgs] mount directory"
     echo
+    echo "u     Unmount targetDrive."
+    echo "      [optArgs] targetDrive"
+    echo
     echo "h     Print this Help text and exit."
     echo
     echo "V     Print software version and exit."
@@ -79,11 +82,14 @@ Unmount()
     # fill this and add option
 }
 
-while getopts "c:hV" option; do
+while getopts "c:u:hV" option; do
    case $option in
     c)  #clean directories
         dirstring=${OPTARG^^}
         Cleanup
+        exit;;
+    u)  #unmount
+        Unmount
         exit;;
     h)  # display Help
         Help
