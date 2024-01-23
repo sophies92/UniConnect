@@ -31,7 +31,7 @@ Help()
     echo
     echo "options:"
     echo
-    echo "c     Cleanup Directories."
+    echo "c     Cleanup mount directories."
     echo "      [optArgs] mount directory"
     echo
     echo "u     Unmount targetDrive."
