@@ -88,12 +88,12 @@ while getopts "c:u:hV" option; do
         dirstring=${OPTARG^^}
         Cleanup
         exit;;
+    h)  # display Help
+        Help
+        exit;;
     u)  #unmount
         dirstring=${OPTARG^^}
         Unmount
-        exit;;
-    h)  # display Help
-        Help
         exit;;
     V)  # Version info
         Version
