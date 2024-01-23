@@ -101,7 +101,7 @@ while getopts "c:hu:v:V" option; do
         Cleanup
         exit;;
     v)  # unmount, dont clean
-    dirstring=${OPTARG^^}
+        dirstring=${OPTARG^^}
         Unmount
         exit;;
     V)  # Version info
