@@ -3,10 +3,8 @@
 #------------------------------------------------------------------------------------------------------------
 # Mount Aber Uni Storage Drives using sshfs
 # Author: Sophie Short
-# Date last modified: 2024.01.28
-# Version: 0.1.4.1
 #------------------------------------------------------------------------------------------------------------
-version="0.1.4.1"
+version="0.1.4.2"
 dateModified="2024.01.28"
 
 
@@ -112,5 +110,5 @@ then
     Connect $1 $2
 else
     echo "[targetDrive] and [username] are required."
-    echo "Check HELP "-h" for usage."
+    echo "Check HELP \"-h\" for usage."
 fi
