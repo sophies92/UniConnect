@@ -18,7 +18,7 @@ Help()
     echo "=================================================="
     echo
     echo "Syntax: uniconnect [targetDrive] [username]"
-    echo "        uniconnect [-c|h|V] [optArgs]"
+    echo "        uniconnect [-c|h|u|v|V] [optArgs]"
     echo
     echo "Suggested [targetDrive] options:"
     echo "      \"impacs\"  : 'P'drive"
@@ -29,6 +29,8 @@ Help()
     echo "c     Cleanup mount directories."
     echo "      [optArgs] mount directory"
     echo
+    echo "h     Print this Help text and exit."
+    echo
     echo "u     Unmount targetDrive. Also removes empty"
     echo "      directories."
     echo "      [optArgs] targetDrive"
@@ -36,8 +38,6 @@ Help()
     echo "v     Unmount targetDrive. Does NOT remove"
     echo "      directories."
     echo "      [optArgs] targetDrive"
-    echo
-    echo "h     Print this Help text and exit."
     echo
     echo "V     Print software version and exit."
     echo
@@ -55,7 +55,7 @@ Version()
 
 Cleanup()
 {
-    if [ ! $11 = "" ]
+    if [ ! $1 = "" ]
     then
         if [ -d $HOME/$1 ];
         then
