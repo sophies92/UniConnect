@@ -4,9 +4,9 @@
 # Mount Aber Uni Storage Drives using sshfs
 # Author: Sophie Short
 # Date last modified: 2024.01.28
-# Version: 0.1.4
+# Version: 0.1.4.1
 #------------------------------------------------------------------------------------------------------------
-version="0.1.4"
+version="0.1.4.1"
 dateModified="2024.01.28"
 
 
