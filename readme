@@ -1,0 +1,30 @@
+uniconnect
+
+DESCRIPTION:
+    A wrapper for sshfs, for locally mounting filesystems available remotely on the Aber Uni network.
+        *If trying to mount a filesystem from a non-Aber Uni netowrk you must be using the
+        GlobalProtect VPN.
+
+INSTALLATION:
+    1 - Copy the file "uniconnect" to "$HOME/.local/bin".
+    2 - Add the line "export PATH="$HOME/.local/bin:$PATH" " to "$HOME/.bashrc" if it is not present.
+        * Log-out and log-in may be required.
+
+USAGE:
+    Mounting a filesystem:
+        In a terminal, enter "uniconnect", followed by the filesystem name to be mounted [targetDrive],
+        followed by your Aber Uni username/log-in name [username].
+
+    Unmounting a filesystem:
+        In a terminal, enter "uniconnect", followed by "-u", followed by the name of the filesystem to be
+        unmounted [targetDrive].
+            * If "-u" is replaced by "-v", the local mount directories will not be removed after unmounting
+            the filesystem.
+
+    Cleaning local mount directories:
+        If the local mount directories were not removed while unmounting a file system, it can be removed 
+        by opening a terminal, and entering "uniconnect", followed by "-c", followed by the filesystem 
+        directory to be removed [targetDrive].
+
+    Help:
+        In a terminal, entering "uniconnect", followed by "-h", will show the help text.
