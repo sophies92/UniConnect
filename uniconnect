@@ -57,6 +57,10 @@ Cleanup()
     then
         if [ -d $HOME/$1 ];
         then
+            while [ -f $HOME/$1/* ]
+            do
+                # wait $!
+            done
             rm -r $HOME/$1
         fi
     fi
