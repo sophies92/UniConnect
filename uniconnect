@@ -57,11 +57,15 @@ Cleanup()
     then
         if [ -d $HOME/$1 ];
         then
-            while [ -f $HOME/$1/* ]
+            for i in {1..5}
             do
-                sleep 1
+                if [ -e $HOME/$1/* ]
+                then
+                    sleep 1
+                else
+                    rmdir $HOME/$1
+                fi
             done
-            rmdir $HOME/$1
         fi
     fi
 }
