@@ -59,9 +59,9 @@ Cleanup()
         then
             while [ -f $HOME/$1/* ]
             do
-                # wait $!
+                sleep 1
             done
-            rm -r $HOME/$1
+            rmdir $HOME/$1
         fi
     fi
 }
