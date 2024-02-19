@@ -18,7 +18,7 @@ USAGE:
     Unmounting a filesystem:
         In a terminal, enter "uniconnect", followed by "-u", followed by the name of the filesystem to be
         unmounted [targetDrive].
-            * If "-u" is replaced by "-v", the local mount directories will not be removed after unmounting
+            * If "-v" is used instead of "-u", the local mount directories will be removed after unmounting
             the filesystem.
 
     Cleaning local mount directories:

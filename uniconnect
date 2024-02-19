@@ -29,11 +29,11 @@ Help()
     echo
     echo "h     Print this Help text and exit."
     echo
-    echo "u     Unmount targetDrive. Also removes empty"
+    echo "u     Unmount targetDrive. Does NOT remove empty"
     echo "      directories."
     echo "      [optArgs] targetDrive"
     echo
-    echo "v     Unmount targetDrive. Does NOT remove"
+    echo "v     Unmount targetDrive. Also removes"
     echo "      directories."
     echo "      [optArgs] targetDrive"
     echo
