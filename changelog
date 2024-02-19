@@ -1,0 +1,2 @@
+0.1.4.3
+    Changed -u and -v options. Default is no longer to remove empty folders from $HOME.

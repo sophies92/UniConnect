@@ -4,8 +4,8 @@
 # Mount Aber Uni Storage Drives using sshfs
 # Author: Sophie Short
 #------------------------------------------------------------------------------------------------------------
-version="0.1.4.2"
-dateModified="2024.01.28"
+version="0.1.4.3"
+dateModified="2024:02:19"
 
 
 
@@ -98,10 +98,10 @@ while getopts "c:hu:v:V" option; do
         exit;;
     u)  #unmount
         Unmount ${OPTARG^^}
-        Cleanup ${OPTARG^^}
         exit;;
     v)  # unmount, dont clean
         Unmount ${OPTARG^^}
+        Cleanup ${OPTARG^^}
         exit;;
     V)  # Version info
         Version
